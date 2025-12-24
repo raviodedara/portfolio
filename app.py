@@ -1,153 +1,99 @@
 import streamlit as st
-import io
 
-# --- 1. PAGE CONFIGURATION ---
-# This must be the first Streamlit command
-st.set_page_config(
-    page_title="Ravi Odedara | AI Architect",
-    page_icon="🤖",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+# --- 1. CONFIGURATION ---
+st.set_page_config(page_title="Ravio | AI Architect", page_icon="🤖", layout="wide")
 
-# --- 2. ADVANCED STYLING (Dark Theme + Blue Text + Red Buttons) ---
+# --- 2. THEME & STYLING (Dark + Blue + Red) ---
 st.markdown("""
     <style>
-    /* Global Background and Text Color (Blue) */
-    .stApp {
-        background-color: #0e1117;
-    }
+    .stApp { background-color: #0e1117; }
     
-    /* Force Blue text for all markdown and paragraphs */
-    .stMarkdown, p, li, span, label {
-        color: #3399FF !important;
-    }
-    
-    /* Headers in a slightly lighter Blue for visibility */
-    h1, h2, h3, h4 {
-        color: #66B2FF !important;
-        font-weight: 800 !important;
-    }
+    /* Text Colors */
+    .stMarkdown, p, li, label { color: #3399FF !important; font-size: 17px; }
+    h1, h2, h3 { color: #66B2FF !important; font-weight: 800 !important; }
 
-    /* Subheaders and Metrics */
-    .stMetric label, .stMetric div {
-        color: #66B2FF !important;
-    }
-
-    /* Professional Red Button for 'View Work' (Scroll Link) */
+    /* The 'Action' Button */
     .view-work-btn {
         background-color: #FF4B4B;
         color: white !important;
-        padding: 14px 28px;
-        border-radius: 12px;
+        padding: 12px 30px;
+        border-radius: 50px;
         text-decoration: none;
         font-weight: bold;
         display: inline-block;
-        border: none;
-        margin-top: 20px;
+        margin-top: 15px;
         transition: 0.3s;
-        box-shadow: 0px 4px 15px rgba(255, 75, 75, 0.3);
     }
-    .view-work-btn:hover {
-        background-color: #ff3333;
-        transform: translateY(-2px);
-        box-shadow: 0px 6px 20px rgba(255, 75, 75, 0.4);
-        color: white !important;
-    }
+    .view-work-btn:hover { background-color: #ff3333; transform: scale(1.05); }
 
-    /* Project Cards / Containers */
-    .project-card {
+    /* Clean Section Cards */
+    .card {
         background-color: #1a1c24;
-        padding: 25px;
-        border-radius: 15px;
-        border: 1px solid #3399FF33;
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 5px solid #FF4B4B;
+        margin-bottom: 20px;
     }
-
-    /* Smooth scroll behavior */
-    html {
-        scroll-behavior: smooth;
-    }
+    
+    html { scroll-behavior: smooth; }
     </style>
 """, unsafe_allow_html=True)
 
-# --- 3. SIDEBAR ---
-with st.sidebar:
-    st.image("https://cdn-icons-png.flaticon.com/512/2103/2103633.png", width=80)
-    st.title("Navigation")
-    st.markdown("---")
-    st.info("💡 **Hire Me:** I build custom AI Agents for businesses. Let's automate your data.")
-    st.markdown("---")
-    st.write("📧 **Contact:** your-email@example.com")
-    st.write("🔗 [LinkedIn](#) | [GitHub](#)")
+# --- 3. HERO SECTION (Punchy & Direct) ---
+st.markdown('<p style="font-size:65px; font-weight:900; margin-bottom:0px;">RAVIO DEDARA</p>', unsafe_allow_html=True)
+st.markdown('<p style="font-size:24px; color: #FF4B4B; font-weight:bold;">AI Solution Architect</p>', unsafe_allow_html=True)
 
-# --- 4. HERO SECTION ---
-st.markdown('<p style="font-size:60px; font-weight:900; margin-bottom:0px; line-height:1;">RAVI ODEDARA</p>', unsafe_allow_html=True)
-st.markdown('<p style="font-size:26px; color: #FF4B4B; font-weight:bold; margin-top:10px;">AI Solution Architect & Data Automator</p>', unsafe_allow_html=True)
-
-col1, col2 = st.columns([2, 1])
+col1, _ = st.columns([2, 1])
 with col1:
-    st.write("""
-    I specialize in building **Private AI Agents** that bridge the gap between complex data and business decisions. 
-    By implementing 'Bring Your Own Key' (BYOK) models, I help companies leverage the power of LLMs like Gemini 1.5 
-    while keeping their data internal and costs under total control.
-    """)
-    # The Action Button (Uses the CSS class defined above)
-    st.markdown('<a href="#projects" class="view-work-btn">View My Recent Work</a>', unsafe_allow_html=True)
+    st.write("I build private, secure AI Agents for businesses. I specialize in the **'Bring Your Own Key'** model to keep your data internal and your costs low.")
+    st.markdown('<a href="#work" class="view-work-btn">View My Recent Work</a>', unsafe_allow_html=True)
 
-with col2:
-    # This acts as a visual spacer or you can put a headshot here
-    st.empty()
+st.write("#") # Spacer
 
-# --- 5. FEATURED PROJECT: DATA PILOT AI ---
-# The Anchor for the scroll button
-st.markdown("<div id='projects' style='padding-top: 50px;'></div>", unsafe_allow_html=True)
+# --- 4. FEATURED PROJECT (Data Pilot) ---
+st.markdown("<div id='work'></div>", unsafe_allow_html=True)
 st.write("---")
+st.markdown("## ✈️ Featured: Data Pilot AI")
 
-st.markdown("## 🚀 Featured Project: Data Pilot AI")
-st.markdown("""
-<div class="project-card">
-    <p style="font-size:18px;">A professional-grade AI Analyst that allows users to clean, visualize, and interact 
-    with their data using natural language commands.</p>
-</div>
-""", unsafe_allow_html=True)
+with st.container():
+    c1, c2 = st.columns([1, 1])
+    with c1:
+        st.markdown("""
+        <div class="card">
+            <h3>The AI Data Analyst</h3>
+            <p>A professional tool that cleans, visualizes, and maps data using Natural Language.</p>
+            <ul>
+                <li><b>Safe-Mode:</b> Instant 'Undo' for data edits.</li>
+                <li><b>Private:</b> Runs on your private Gemini API key.</li>
+                <li><b>Smart:</b> Auto-detects the best model for your tasks.</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
+        st.link_button("Launch Live Demo 🚀", "https://datapilot101.streamlit.app/", use_container_width=True)
+    
+    with c2:
+        # Visual proof: This link shows a professional data icon
+        st.image("https://img.icons8.com/clouds/500/data-configuration.png", width=350)
 
-c1, c2 = st.columns([1, 1])
+st.write("#")
 
-with c1:
-    st.markdown("### 👨🏼‍✈️ The Pilot in Action")
-    # Replace this link with a screenshot of your actual map/dashboard
-    st.image("https://img.icons8.com/clouds/500/data-configuration.png", use_container_width=True)
-    st.write("**Tech Stack:** Python, Streamlit, Google Gemini 1.5, Pandas, Plotly Express.")
-
-with c2:
-    st.markdown("### 🛠️ Key Technical Solves")
-    st.write("""
-    - **Safe-Mode Architecture:** Created an immutable 'Original Data' backup system allowing users to 'Undo' any AI-driven data modification.
-    - **Session State Persistence:** Engineered complex memory handling to ensure user API keys and chat history survive page reruns.
-    - **Automated Data Cleaning:** Trained the agent to distinguish between 'View' commands (Show me) and 'Action' commands (Delete rows).
-    - **Private Mapping:** Implemented Mapbox-free geospatial visualization using OpenStreetMap tiles.
-    """)
-    st.link_button("Launch Live Demo ✈️", "https://datapilot101.streamlit.app/", use_container_width=True)
-
-# --- 6. SERVICES & EXPERTISE ---
+# --- 5. SERVICES (Grid Layout) ---
 st.write("---")
 st.markdown("## 🛠️ Specialized Services")
-
 s1, s2, s3 = st.columns(3)
 
 with s1:
-    st.markdown("### 🤖 Custom AI Agents")
-    st.write("Design and deployment of tailored LLM agents that live on your private infrastructure.")
-
+    st.markdown("### 🤖 Private AI")
+    st.write("Tailored LLM agents that live on your private infrastructure.")
 with s2:
-    st.markdown("### 🧹 Data Engineering")
-    st.write("Building automated Python scripts to clean, transform, and merge fragmented business datasets.")
-
+    st.markdown("### 🧹 Automation")
+    st.write("Python pipelines that clean messy data while you sleep.")
 with s3:
-    st.markdown("### 📈 Visual Intelligence")
-    st.write("Developing interactive, real-time dashboards for executives to monitor KPIs instantly.")
+    st.markdown("### 📈 Visuals")
+    st.write("Interactive Plotly/Mapbox dashboards for executives.")
 
-# --- 7. CONTACT / FOOTER ---
+# --- 6. FOOTER ---
+st.write("#")
 st.write("---")
-st.markdown("<center><p style='color: #66B2FF;'>Interested in a custom build or freelance collaboration?</p></center>", unsafe_allow_html=True)
-st.markdown("<center><p style='font-size:20px; font-weight:bold;'>Let's connect: <u>your-email@example.com</u></p></center>", unsafe_allow_html=True)
+st.markdown("<center>Ready to automate? <b>your-email@example.com</b></center>", unsafe_allow_html=True)
+st.markdown("<center>LinkedIn | GitHub</center>", unsafe_allow_html=True)
