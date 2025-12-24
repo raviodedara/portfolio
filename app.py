@@ -4,7 +4,7 @@ import io
 # --- 1. PAGE CONFIGURATION ---
 # This must be the first Streamlit command
 st.set_page_config(
-    page_title="Raviodedara | AI Architect",
+    page_title="Ravi Odedara | AI Architect",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -81,7 +81,7 @@ with st.sidebar:
     st.write("🔗 [LinkedIn](#) | [GitHub](#)")
 
 # --- 4. HERO SECTION ---
-st.markdown('<p style="font-size:60px; font-weight:900; margin-bottom:0px; line-height:1;">RAVIO DEDARA</p>', unsafe_allow_html=True)
+st.markdown('<p style="font-size:60px; font-weight:900; margin-bottom:0px; line-height:1;">RAVI ODEDARA</p>', unsafe_allow_html=True)
 st.markdown('<p style="font-size:26px; color: #FF4B4B; font-weight:bold; margin-top:10px;">AI Solution Architect & Data Automator</p>', unsafe_allow_html=True)
 
 col1, col2 = st.columns([2, 1])
