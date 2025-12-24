@@ -40,7 +40,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- 3. HERO SECTION (Punchy & Direct) ---
-st.markdown('<p style="font-size:65px; font-weight:900; margin-bottom:0px;">RAVIO DEDARA</p>', unsafe_allow_html=True)
+st.markdown('<p style="font-size:65px; font-weight:900; margin-bottom:0px;">RAVI ODEDARA</p>', unsafe_allow_html=True)
 st.markdown('<p style="font-size:24px; color: #FF4B4B; font-weight:bold;">AI Solution Architect</p>', unsafe_allow_html=True)
 
 col1, _ = st.columns([2, 1])
