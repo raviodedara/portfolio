@@ -1,7 +1,7 @@
 [theme]
 base="dark"
-primaryColor="#FF4B4B"
-backgroundColor="#0e1117"
+primaryColor="#FF4B4B"        # Keep your buttons red for contrast
+backgroundColor="#0e1117"     # Dark background
 secondaryBackgroundColor="#262730"
-textColor="#fafafa"
+textColor="#3399FF"           # This is a clean, readable Blue color
 font="sans serif"
