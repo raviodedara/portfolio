@@ -33,19 +33,39 @@ st.markdown("""
         line-height: 1.6;
     }
 
-    /* --- FIX FOR ALL BUTTONS (View Details, Send Message) --- */
+    /* --- FIX FOR ALL BUTTONS (Standard, Link, & Form) --- */
+    /* 1. Target Standard Buttons (View Details, Send Message) */
     div.stButton > button:first-child {
-        background-color: var(--primary-color); /* Uses your Teal Color */
-        color: white !important;               /* Forces White Text */
+        background-color: var(--primary-color) !important;
+        color: white !important;
         border-radius: 8px;
         border: none;
         padding: 10px 20px;
         font-weight: bold;
         transition: 0.3s;
     }
-    
     div.stButton > button:hover {
-        background-color: #004d4d;             /* Darker Teal on Hover */
+        background-color: #004d4d !important;
+        color: white !important;
+        transform: translateY(-2px);
+    }
+
+    /* 2. Target Link Buttons (Live Demo, Source Code, How it Works) */
+    /* Streamlit renders these as anchor tags inside a specific div */
+    a[data-testid="stLinkButton"] {
+        background-color: var(--primary-color) !important;
+        color: white !important;
+        border-radius: 8px;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        transition: 0.3s;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+    a[data-testid="stLinkButton"]:hover {
+        background-color: #004d4d !important;
         color: white !important;
         transform: translateY(-2px);
     }
@@ -274,8 +294,14 @@ with st.container():
         st.markdown("**Tech:** <span class='tech-badge'>Python</span> <span class='tech-badge'>Streamlit</span> <span class='tech-badge'>Gemini AI</span> <span class='tech-badge'>Plotly</span>", unsafe_allow_html=True)
     with p1_c2:
         st.markdown("<br>", unsafe_allow_html=True)
+        # BUTTONS - Now using st.link_button for consistency
         st.link_button("🚀 Live Demo", "https://datapilot101.streamlit.app/", use_container_width=True)
-        st.link_button("💻 Source Code", "https://github.com/your-repo", use_container_width=True)
+        st.link_button("💻 Source Code", "https://github.com/raviodedara", use_container_width=True) # UPDATE LINK HERE
+        
+        # --- NEW BUTTON ADDED HERE ---
+        # Replace '#' with your Reddit or X video link
+        st.link_button("🎥 How it Works", "https://x.com/RaviOdedaraa/status/1999409007208043000?s=20", use_container_width=True) 
+        
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.divider()
@@ -321,7 +347,7 @@ contact_c1, contact_c2 = st.columns([1, 1])
 
 with contact_c1:
     st.write("Interested in working together or hiring me full-time? Let's talk.")
-    st.write("📧 **Email:** ravikumargo2812@gmail.com") # REPLACE WITH YOUR EMAIL
+    st.write("📧 **Email:** ravikumargo2812@gmail.com") 
     st.write("📍 **Location:** Canada")
     st.write("⏱️ **Response Time:** Usually within 24 hours.")
     
