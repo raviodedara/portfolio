@@ -33,41 +33,53 @@ st.markdown("""
         line-height: 1.6;
     }
 
-    /* --- FIX FOR ALL BUTTONS (Standard, Link, & Form) --- */
-    /* 1. Target Standard Buttons (View Details, Send Message) */
-    div.stButton > button:first-child {
+    /* --- UNIVERSAL BUTTON STYLING (The Fix) --- */
+    
+    /* 1. Regular Buttons & Form Submit Buttons */
+    div.stButton > button {
         background-color: var(--primary-color) !important;
         color: white !important;
-        border-radius: 8px;
-        border: none;
-        padding: 10px 20px;
-        font-weight: bold;
-        transition: 0.3s;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 0.6rem 1.2rem !important;
+        font-weight: 600 !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
     }
+    
     div.stButton > button:hover {
-        background-color: #004d4d !important;
+        background-color: #004d4d !important; /* Darker Teal */
         color: white !important;
-        transform: translateY(-2px);
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
     }
 
-    /* 2. Target Link Buttons (Live Demo, Source Code, How it Works) */
-    /* Streamlit renders these as anchor tags inside a specific div */
+    /* 2. Link Buttons (Live Demo, Source Code, How it Works) */
+    /* We target the specific Streamlit test ID for link buttons */
     a[data-testid="stLinkButton"] {
         background-color: var(--primary-color) !important;
         color: white !important;
-        border-radius: 8px;
-        border: none;
-        padding: 10px 20px;
-        font-weight: bold;
-        transition: 0.3s;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 0.6rem 1.2rem !important;
+        font-weight: 600 !important;
+        text-align: center !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+        display: inline-block !important; 
     }
+
+    /* Force text inside link buttons to be white (Fixes the readability issue) */
+    a[data-testid="stLinkButton"] * {
+        color: white !important;
+    }
+
     a[data-testid="stLinkButton"]:hover {
         background-color: #004d4d !important;
         color: white !important;
-        transform: translateY(-2px);
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
     }
     
     /* --- STICKY TOP NAVIGATION --- */
@@ -160,6 +172,11 @@ st.markdown("""
         text-align: center;
         border: 1px solid #eee;
         height: 100%;
+        transition: transform 0.3s;
+    }
+    .service-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
     /* --- CONTACT FORM --- */
