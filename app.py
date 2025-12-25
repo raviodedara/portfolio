@@ -191,7 +191,7 @@ with col_hero_text:
     
     st.markdown("<br><br>", unsafe_allow_html=True)
     # Social Proof / Trust
-    st.caption("TRUSTED BY TEAMS AT: Shoppers Drug Mart • Shanti Business School")
+    st.caption("TRUSTED BY TEAMS AT: JadeBlue E-Comm. • Shanti B School")
 
 with col_hero_img:
     # PLACEHOLDER: Replace this URL with your actual photo
@@ -207,7 +207,7 @@ col_about, col_highlights = st.columns([2, 1])
 
 with col_about:
     st.write("""
-    I am a Data Analyst & AI-focused Business Analyst based in **Burnaby, BC**.
+    I am a Data Analyst & AI-focused Business Analyst based in **Canada**.
     
     **My Specialty:** I specialize in automating reporting, building dashboards, and creating AI-powered agents 
     for retail, education, and small business operations.
@@ -278,22 +278,6 @@ with st.container():
         st.link_button("💻 Source Code", "https://github.com/your-repo", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
-# --- PROJECT 2: RETAIL DASHBOARD (Placeholder) ---
-with st.container():
-    st.markdown('<div class="project-card">', unsafe_allow_html=True)
-    p2_c1, p2_c2 = st.columns([3, 1])
-    with p2_c1:
-        st.subheader("🛒 Retail Inventory Optimization Dashboard")
-        st.write("**Summary:** Automated inventory tracking system for a multi-store retail chain.")
-        st.write("**Problem:** Store managers were manually updating weekly sales reports, taking ~6 hours/week.")
-        st.write("**My Approach:** Built automated Python pipeline to pull data and generate Tableau dashboards.")
-        st.write("**Outcome:** Reduced reporting time by 70%, freeing up 4 hours/week per manager.")
-        st.markdown("**Tech:** <span class='tech-badge'>Python</span> <span class='tech-badge'>Tableau</span> <span class='tech-badge'>Excel</span>", unsafe_allow_html=True)
-    with p2_c2:
-        st.markdown("<br>", unsafe_allow_html=True)
-        st.button("View Details", key="p2_btn", use_container_width=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-
 st.divider()
 
 # --- 8. SERVICES SECTION ---
@@ -359,7 +343,7 @@ with contact_c2:
 st.markdown("""
     <hr>
     <div style="text-align:center; color: #666; padding: 20px;">
-        <p>Ravi Odedara © 2025 • Burnaby, BC, Canada</p>
+        <p>Ravi Odedara © 2025 • Canada</p>
         <p>
             <a href="#home" style="color:#666; text-decoration:none;">Home</a> | 
             <a href="#projects" style="color:#666; text-decoration:none;">Projects</a> | 
