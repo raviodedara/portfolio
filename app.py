@@ -249,8 +249,6 @@ with col_highlights:
     * ✅ Designing AI copilots for data teams
     * ✅ Cleaning messy operational data
     """)
-    # Resume Button
-    st.link_button("📄 Download Resume", "https://www.linkedin.com/in/ravikumar-odedara/", help="Link to PDF Resume")
 
 st.divider()
 
