@@ -178,7 +178,7 @@ with col_hero_text:
 
 with col_hero_img:
     # PLACEHOLDER: Replace this URL with your actual photo
-    st.image("https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg", width=400)
+    st.image("file:///C:/Users/Owner/Desktop/Wallpaper/WhatsApp%20Image%202025-09-23%20at%2019.18.11_fc0fa7b9.jpg", width=400)
 
 st.divider()
 
