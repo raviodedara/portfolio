@@ -32,6 +32,23 @@ st.markdown("""
         font-size: 1.1rem;
         line-height: 1.6;
     }
+
+    /* --- FIX FOR ALL BUTTONS (View Details, Send Message) --- */
+    div.stButton > button:first-child {
+        background-color: var(--primary-color); /* Uses your Teal Color */
+        color: white !important;               /* Forces White Text */
+        border-radius: 8px;
+        border: none;
+        padding: 10px 20px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    
+    div.stButton > button:hover {
+        background-color: #004d4d;             /* Darker Teal on Hover */
+        color: white !important;
+        transform: translateY(-2px);
+    }
     
     /* --- STICKY TOP NAVIGATION --- */
     .navbar {
@@ -213,7 +230,7 @@ with col_highlights:
     * ✅ Cleaning messy operational data
     """)
     # Resume Button
-    st.link_button("📄 Download Resume", "https://linkedin.com/in/your-profile", help="Link to PDF Resume")
+    st.link_button("📄 Download Resume", "https://www.linkedin.com/in/ravikumar-odedara/", help="Link to PDF Resume")
 
 st.divider()
 
@@ -320,12 +337,12 @@ contact_c1, contact_c2 = st.columns([1, 1])
 
 with contact_c1:
     st.write("Interested in working together or hiring me full-time? Let's talk.")
-    st.write("📧 **Email:** ravi.odedara@example.com") # REPLACE WITH YOUR EMAIL
-    st.write("📍 **Location:** Burnaby, BC, Canada")
+    st.write("📧 **Email:** ravikumargo2812@gmail.com") # REPLACE WITH YOUR EMAIL
+    st.write("📍 **Location:** Canada")
     st.write("⏱️ **Response Time:** Usually within 24 hours.")
     
     st.markdown("### Connect")
-    st.write("[LinkedIn](https://linkedin.com) | [GitHub](https://github.com)")
+    st.write("[LinkedIn](https://www.linkedin.com/in/ravikumar-odedara/) | [GitHub](https://github.com/raviodedara)")
 
 with contact_c2:
     st.markdown("### Send a Message")
