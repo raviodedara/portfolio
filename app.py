@@ -178,7 +178,7 @@ with col_hero_text:
 
 with col_hero_img:
     # PLACEHOLDER: Replace this URL with your actual photo
-    st.image("file:///C:/Users/Owner/Desktop/Wallpaper/WhatsApp%20Image%202025-09-23%20at%2019.18.11_fc0fa7b9.jpg", width=400)
+    st.image("https://media.licdn.com/dms/image/v2/D5635AQE48RLqRqzU_Q/profile-framedphoto-shrink_400_400/B56ZpIecRlJsAc-/0/1762152531306?e=1767258000&v=beta&t=erhjntIohTme4sufbPVuugk8qRde4MEXW6OrO7S4PWE", width=400)
 
 st.divider()
 
