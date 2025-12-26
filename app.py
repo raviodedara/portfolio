@@ -166,7 +166,7 @@ with col_a:
     * 📊 **MBA in Business Analytics**
     * 🤖 **Real-world Ops + AI Tooling Experience**
     """)
-    st.info("💡 **Fun Fact:** When I'm not building AI agents, I enjoy hiking the trails around Burnaby Mountain.")
+    st.info("💡 **Fun Fact:** When I'm not building AI agents, I enjoy hiking the trails around Mountain.")
 
 with col_h:
     st.markdown("### ⚡ What I'm Good At")
@@ -176,7 +176,6 @@ with col_h:
     * ✅ Designing AI copilots for data teams
     * ✅ Cleaning messy operational data
     """)
-    st.link_button("📄 Download Resume", "https://www.linkedin.com/in/ravikumar-odedara/")
 
 st.divider()
 
@@ -220,22 +219,7 @@ with st.container():
         st.markdown("<br>", unsafe_allow_html=True)
         st.link_button("🚀 Live Demo", "https://datapilot101.streamlit.app/", use_container_width=True)
         st.link_button("💻 Source Code", "https://github.com/raviodedara", use_container_width=True)
-        st.link_button("🎥 How it Works", "https://x.com/your-video", use_container_width=True)
-    st.markdown('</div>', unsafe_allow_html=True)
-
-# Retail Dashboard Project
-with st.container():
-    st.markdown('<div class="project-card">', unsafe_allow_html=True)
-    p2_c1, p2_c2 = st.columns([3, 1])
-    with p2_c1:
-        st.subheader("🛒 Retail Inventory Optimization Dashboard")
-        st.write("**Summary:** Automated inventory tracking system for a multi-store retail chain.")
-        st.write("**Problem:** Managers manually updating sales reports, taking ~6 hours/week.")
-        st.write("**Outcome:** Reduced reporting time by 70%, freeing up 4 hours/week per manager.")
-        st.markdown("**Tech:** <span class='tech-badge'>Python</span> <span class='tech-badge'>Tableau</span> <span class='tech-badge'>Excel</span>", unsafe_allow_html=True)
-    with p2_c2:
-        st.markdown("<br>", unsafe_allow_html=True)
-        st.button("View Details", key="p2_btn", use_container_width=True)
+        st.link_button("🎥 How it Works", "https://www.reddit.com/r/madeinpython/comments/1plfnzf/i_built_a_local_data_agent_that_writes_its_own/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.divider()
