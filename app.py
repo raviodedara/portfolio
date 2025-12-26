@@ -8,195 +8,82 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# --- 2. CUSTOM CSS (The Design System) ---
+# --- 2. THE ULTIMATE CSS (Forces Button Colors & Form Styling) ---
 st.markdown("""
     <style>
-    /* --- COLORS & FONTS --- */
     :root {
-        --primary-color: #006666; /* Deep Teal */
-        --accent-color: #FF4B4B; /* Coral/Orange */
-        --bg-color: #F8F9FA; /* Light Gray/White */
-        --text-color: #333333;
-    }
-    
-    /* Global Styles */
-    .stApp {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-    }
-    h1, h2, h3 {
-        color: var(--primary-color) !important;
-    }
-    p, li {
-        color: #444444 !important;
-        font-size: 1.1rem;
-        line-height: 1.6;
+        --primary-color: #006666; 
+        --accent-color: #FF4B4B;
+        --bg-color: #F8F9FA;
     }
 
-    /* --- UNIVERSAL BUTTON STYLING (The Fix) --- */
+    /* Global Background */
+    .stApp { background-color: var(--bg-color); }
+
+    /* --- NUCLEAR BUTTON FIX --- */
+    /* Target Link Buttons (Live Demo, Source Code, etc.) */
+    [data-testid="stLinkButton"] {
+        background-color: var(--primary-color) !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 0.5rem 1rem !important;
+        transition: 0.3s !important;
+    }
     
-    /* 1. Regular Buttons & Form Submit Buttons */
-    div.stButton > button {
+    /* Force Link Button Text to be White */
+    [data-testid="stLinkButton"] p {
+        color: white !important;
+        font-weight: bold !important;
+    }
+
+    /* Target Regular/Form Buttons (Send Message) */
+    [data-testid="baseButton-secondary"], [data-testid="baseButton-primary"] {
         background-color: var(--primary-color) !important;
         color: white !important;
         border: none !important;
         border-radius: 8px !important;
-        padding: 0.6rem 1.2rem !important;
-        font-weight: 600 !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
-    }
-    
-    div.stButton > button:hover {
-        background-color: #004d4d !important; /* Darker Teal */
-        color: white !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
     }
 
-    /* 2. Link Buttons (Live Demo, Source Code, How it Works) */
-    /* We target the specific Streamlit test ID for link buttons */
-    a[data-testid="stLinkButton"] {
-        background-color: var(--primary-color) !important;
-        color: white !important;
-        border: none !important;
-        border-radius: 8px !important;
-        padding: 0.6rem 1.2rem !important;
-        font-weight: 600 !important;
-        text-align: center !important;
-        text-decoration: none !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
-        display: inline-block !important; 
-    }
-
-    /* Force text inside link buttons to be white (Fixes the readability issue) */
-    a[data-testid="stLinkButton"] * {
-        color: white !important;
-    }
-
-    a[data-testid="stLinkButton"]:hover {
+    /* Hover effects for all */
+    [data-testid="stLinkButton"]:hover, button:hover {
         background-color: #004d4d !important;
-        color: white !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
-    }
-    
-    /* --- STICKY TOP NAVIGATION --- */
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        padding: 15px 50px;
-        z-index: 999;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .navbar a {
-        text-decoration: none;
-        color: #333;
-        font-weight: 600;
-        margin-left: 25px;
-        font-family: sans-serif;
-        transition: color 0.3s;
-    }
-    .navbar a:hover {
-        color: var(--accent-color);
-    }
-    .nav-logo {
-        font-size: 1.5rem;
-        font-weight: 900;
-        color: var(--primary-color) !important;
-    }
-    
-    /* Spacer to prevent content from hiding behind nav */
-    .nav-spacer {
-        height: 80px;
+        transform: translateY(-2px);
     }
 
-    /* --- HERO SECTION --- */
+    /* --- NAVIGATION --- */
+    .navbar {
+        position: fixed; top: 0; left: 0; width: 100%; background: white;
+        padding: 15px 50px; z-index: 999; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    .navbar a { text-decoration: none; color: #333; font-weight: 600; margin-left: 25px; }
+    .nav-logo { font-size: 1.5rem; font-weight: 900; color: var(--primary-color) !important; }
+    .nav-spacer { height: 80px; }
+
+    /* --- HERO --- */
     .hero-btn-primary {
-        background-color: var(--accent-color);
-        color: white !important;
-        padding: 12px 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        background-color: var(--accent-color); color: white !important;
+        padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold;
     }
     .hero-btn-secondary {
-        background-color: transparent;
-        color: var(--primary-color) !important;
-        border: 2px solid var(--primary-color);
-        padding: 10px 22px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-        margin-left: 10px;
+        background-color: transparent; color: var(--primary-color) !important;
+        border: 2px solid var(--primary-color); padding: 10px 22px; border-radius: 8px; font-weight: bold;
     }
 
     /* --- PROJECT CARDS --- */
     .project-card {
-        background-color: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        border-left: 5px solid var(--primary-color);
-        margin-bottom: 20px;
-        transition: transform 0.2s;
-    }
-    .project-card:hover {
-        transform: translateY(-5px);
-    }
-    .tech-badge {
-        background-color: #eef;
-        color: #33a;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        margin-right: 5px;
-        font-weight: 600;
-    }
-
-    /* --- SERVICES --- */
-    .service-box {
-        background-color: white;
-        padding: 30px;
-        border-radius: 10px;
-        text-align: center;
-        border: 1px solid #eee;
-        height: 100%;
-        transition: transform 0.3s;
-    }
-    .service-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-
-    /* --- CONTACT FORM --- */
-    input, textarea {
-        border-radius: 5px;
-        border: 1px solid #ddd;
-        padding: 10px;
-        width: 100%;
-        margin-bottom: 10px;
+        background-color: white; padding: 25px; border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid var(--primary-color);
     }
     </style>
 """, unsafe_allow_html=True)
 
-# --- 3. NAVIGATION BAR (HTML) ---
+# --- 3. NAVIGATION ---
 st.markdown("""
     <div class="navbar">
         <div class="nav-logo">RO</div>
         <div>
             <a href="#about">About</a>
-            <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
@@ -206,189 +93,62 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- 4. HERO SECTION ---
-st.markdown("<div id='home'></div>", unsafe_allow_html=True)
-
-col_hero_text, col_hero_img = st.columns([1.5, 1])
-
-with col_hero_text:
-    st.markdown("# Data Analyst & AI Solutions Builder")
-    st.markdown("### Helping Businesses Automate Data Workflows")
-    st.write("""
-    I help small and mid-sized businesses turn messy data into automated, insight-rich dashboards 
-    and AI agents that save 10–20 hours per week. Combining an MBA in Business Analytics 
-    with hands-on AI engineering to deliver operational efficiency.
-    """)
-    st.markdown("<br>", unsafe_allow_html=True)
-    
-    # Hero Buttons
-    st.markdown("""
-        <a href="#projects" class="hero-btn-primary">View My Projects</a>
-        <a href="#contact" class="hero-btn-secondary">Work With Me</a>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("<br><br>", unsafe_allow_html=True)
-    # Social Proof / Trust
-    st.caption("TRUSTED BY TEAMS AT: JadeBlue E-Comm. • Shanti B School")
-
-with col_hero_img:
-    # PLACEHOLDER: Replace this URL with your actual photo
-    st.image("https://media.licdn.com/dms/image/v2/D5635AQE48RLqRqzU_Q/profile-framedphoto-shrink_400_400/B56ZpIecRlJsAc-/0/1762152531306?e=1767258000&v=beta&t=erhjntIohTme4sufbPVuugk8qRde4MEXW6OrO7S4PWE", width=400)
+col_h1, col_h2 = st.columns([1.5, 1])
+with col_h1:
+    st.title("Data Analyst & AI Solutions Builder")
+    st.write("I help businesses turn messy data into automated dashboards and AI agents.")
+    st.markdown('<br><a href="#projects" class="hero-btn-primary">View My Projects</a> <a href="#contact" class="hero-btn-secondary">Work With Me</a>', unsafe_allow_html=True)
+with col_h2:
+    st.image("https://media.licdn.com/dms/image/v2/D5635AQE48RLqRqzU_Q/profile-framedphoto-shrink_400_400/B56ZpIecRlJsAc-/0/1762152531306?e=1767258000&v=beta&t=erhjntIohTme4sufbPVuugk8qRde4MEXW6OrO7S4PWE", width=300)
 
 st.divider()
 
-# --- 5. ABOUT SECTION ---
-st.markdown("<div id='about'></div>", unsafe_allow_html=True)
-st.header("About Me")
-
-col_about, col_highlights = st.columns([2, 1])
-
-with col_about:
-    st.write("""
-    I am a Data Analyst & AI-focused Business Analyst based in **Canada**.
-    
-    **My Specialty:** I specialize in automating reporting, building dashboards, and creating AI-powered agents 
-    for retail, education, and small business operations.
-    
-    **The Unique Combo:**
-    * 📘 **Strong Math Background** (B.Sc. Math)
-    * 📊 **MBA in Business Analytics**
-    * 🤖 **Real-world Ops + AI Tooling Experience**
-    """)
-    
-    # Personal Touch
-    st.info("💡 **Fun Fact:** When I'm not building AI agents, I enjoy hiking the trails around Burnaby Mountain.")
-
-with col_highlights:
-    st.markdown("### ⚡ What I'm Good At")
-    st.markdown("""
-    * ✅ Automating recurring reports & KPIs
-    * ✅ Building interactive dashboards
-    * ✅ Designing AI copilots for data teams
-    * ✅ Cleaning messy operational data
-    """)
-
-st.divider()
-
-# --- 6. SKILLS SECTION ---
-st.markdown("<div id='skills'></div>", unsafe_allow_html=True)
-st.header("Technical Skills")
-st.write("I use these tools to move from **raw data → clean dataset → analysis → automated dashboards**.")
-
-skill_c1, skill_c2 = st.columns(2)
-
-with skill_c1:
-    st.subheader("🛠️ Tools & Languages")
-    st.write("**Python:** Pandas, NumPy, Matplotlib, Seaborn")
-    st.write("**SQL:** Complex Queries, Joins, Aggregation")
-    st.write("**Excel:** Advanced Formulas, Pivot Tables, VBA")
-    st.write("**BI:** Power BI, Tableau, Streamlit")
-
-with skill_c2:
-    st.subheader("🤖 AI & Automation")
-    st.write("**Gen AI:** Prompt Engineering, Gemini 1.5 Pro")
-    st.write("**Agents:** Custom AI Agent Design, RAG")
-    st.write("**Cloud:** AWS (Basic EC2/S3 deployment)")
-    st.write("**Process:** Data Cleaning, KPI Definition, Time-Series")
-
-st.divider()
-
-# --- 7. PROJECTS SECTION ---
+# --- 5. PROJECTS ---
 st.markdown("<div id='projects'></div>", unsafe_allow_html=True)
 st.header("Featured Projects")
 
-# --- PROJECT 1: DATA PILOT ---
 with st.container():
     st.markdown('<div class="project-card">', unsafe_allow_html=True)
-    p1_c1, p1_c2 = st.columns([3, 1])
-    with p1_c1:
+    p1, p2 = st.columns([3, 1])
+    with p1:
         st.subheader("✈️ Data Pilot: AI Data Analyst Agent")
-        st.write("**Summary:** A private AI agent that allows users to clean, map, and visualize CSV data using natural language.")
-        st.write("**Problem:** Small teams spend 80% of time cleaning data and fear uploading sensitive files to public AI.")
-        st.write("**My Approach:** Built a 'Bring Your Own Key' Streamlit app with 'Safe-Mode' architecture to prevent data loss.")
-        st.write("**Outcome:** Reduces data cleaning time by ~90% for non-technical users.")
-        st.markdown("**Tech:** <span class='tech-badge'>Python</span> <span class='tech-badge'>Streamlit</span> <span class='tech-badge'>Gemini AI</span> <span class='tech-badge'>Plotly</span>", unsafe_allow_html=True)
-    with p1_c2:
+        st.write("A private AI agent that cleans and visualizes CSV data using natural language.")
+        st.write("**Tech:** Python, Streamlit, Gemini AI, Plotly")
+    with p2:
         st.markdown("<br>", unsafe_allow_html=True)
-        # BUTTONS - Now using st.link_button for consistency
         st.link_button("🚀 Live Demo", "https://datapilot101.streamlit.app/", use_container_width=True)
-        st.link_button("💻 Source Code", "https://github.com/raviodedara", use_container_width=True) # UPDATE LINK HERE
-        
-        # --- NEW BUTTON ADDED HERE ---
-        # Replace '#' with your Reddit or X video link
-        st.link_button("🎥 How it Works", "https://x.com/RaviOdedaraa/status/1999409007208043000?s=20", use_container_width=True) 
-        
+        st.link_button("💻 Source Code", "https://github.com/raviodedara", use_container_width=True)
+        st.link_button("🎥 How it Works", "https://x.com/your-video", use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 st.divider()
 
-# --- 8. SERVICES SECTION ---
-st.markdown("<div id='services'></div>", unsafe_allow_html=True)
-st.header("How I Can Help Your Business")
-
-serv_c1, serv_c2, serv_c3 = st.columns(3)
-
-with serv_c1:
-    st.markdown('<div class="service-box">', unsafe_allow_html=True)
-    st.subheader("📊 Reporting Automation")
-    st.write("Stop copy-pasting Excel rows. I automate your weekly/monthly KPI reports so they arrive in your inbox automatically.")
-    st.markdown("*Time saved: 5-10 hours/week*")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-with serv_c2:
-    st.markdown('<div class="service-box">', unsafe_allow_html=True)
-    st.subheader("📈 Interactive Dashboards")
-    st.write("I build central dashboards (Power BI/Streamlit) so you can see Sales, Inventory, and Ops data in one place.")
-    st.markdown("*Better visibility on KPIs*")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-with serv_c3:
-    st.markdown('<div class="service-box">', unsafe_allow_html=True)
-    st.subheader("🤖 Custom AI Agents")
-    st.write("I build private AI tools that 'chat' with your data, allowing your team to ask questions without knowing SQL.")
-    st.markdown("*Typical project: 2-4 weeks*")
-    st.markdown('</div>', unsafe_allow_html=True)
-
-st.markdown("<br><center>", unsafe_allow_html=True)
-st.markdown('<a href="#contact" class="hero-btn-primary">Request a Quote</a>', unsafe_allow_html=True)
-st.markdown("</center><br>", unsafe_allow_html=True)
-
-st.divider()
-
-# --- 9. CONTACT SECTION ---
+# --- 6. CONTACT FORM ---
 st.markdown("<div id='contact'></div>", unsafe_allow_html=True)
 st.header("Let's Work Together")
 
-contact_c1, contact_c2 = st.columns([1, 1])
-
-with contact_c1:
-    st.write("Interested in working together or hiring me full-time? Let's talk.")
-    st.write("📧 **Email:** ravikumargo2812@gmail.com") 
+c1, c2 = st.columns(2)
+with c1:
+    st.write("📧 **Email:** ravikumargo2812@gmail.com")
     st.write("📍 **Location:** Canada")
-    st.write("⏱️ **Response Time:** Usually within 24 hours.")
-    
-    st.markdown("### Connect")
     st.write("[LinkedIn](https://www.linkedin.com/in/ravikumar-odedara/) | [GitHub](https://github.com/raviodedara)")
 
-with contact_c2:
-    st.markdown("### Send a Message")
-    with st.form("contact_form"):
-        name = st.text_input("Name")
-        email = st.text_input("Email")
-        message = st.text_area("Message")
-        submit = st.form_submit_button("Send Message")
-        
-        if submit:
-            st.success("Thanks! I'll get back to you shortly.")
+with c2:
+    # --- Formspree Integration ---
+    # Replace 'YOUR_FORMSPREE_ID' with the ID from formspree.io
+    form_id = "https://formspree.io/f/mdaonvwr" 
+    
+    st.markdown(f"""
+        <form action="https://formspree.io/f/{form_id}" method="POST" style="background: white; padding: 20px; border-radius: 10px; border: 1px solid #ddd;">
+            <label style="color:#333; font-weight:bold;">Name</label><br>
+            <input type="text" name="name" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px;"><br>
+            <label style="color:#333; font-weight:bold;">Email</label><br>
+            <input type="email" name="_replyto" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px;"><br>
+            <label style="color:#333; font-weight:bold;">Message</label><br>
+            <textarea name="message" required style="width:100%; padding:10px; margin-bottom:10px; border:1px solid #ccc; border-radius:5px; height:100px;"></textarea><br>
+            <button type="submit" style="background-color:#006666; color:white; border:none; padding:10px 20px; border-radius:5px; font-weight:bold; cursor:pointer; width:100%;">Send Message</button>
+        </form>
+    """, unsafe_allow_html=True)
 
-# --- 10. FOOTER ---
-st.markdown("""
-    <hr>
-    <div style="text-align:center; color: #666; padding: 20px;">
-        <p>Ravi Odedara © 2025 • Canada</p>
-        <p>
-            <a href="#home" style="color:#666; text-decoration:none;">Home</a> | 
-            <a href="#projects" style="color:#666; text-decoration:none;">Projects</a> | 
-            <a href="#contact" style="color:#666; text-decoration:none;">Contact</a>
-        </p>
-    </div>
-""", unsafe_allow_html=True)
+# --- 7. FOOTER ---
+st.markdown("<br><hr><center><p style='color:#666;'>Ravi Odedara © 2025</p></center>", unsafe_allow_html=True)
