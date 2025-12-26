@@ -269,7 +269,7 @@ with c_c1:
 
 with c_c2:
     # REPLACE 'YOUR_ID' with your ID from formspree.io
-    form_id = "https://formspree.io/f/mdaonvwr" 
+    form_id = "mdaonvwr" 
     st.markdown(f"""
         <form action="https://formspree.io/f/{form_id}" method="POST" style="background:white; padding:20px; border-radius:10px; border:1px solid #ddd;">
             <label style="color:#333; font-weight:bold;">Name</label><br>
