@@ -247,7 +247,7 @@ c_c1, c_c2 = st.columns(2)
 
 with c_c1:
     st.write("Interested in working together or hiring me full-time? Let's talk.")
-    st.write("📧 **Email:** ravikumargo2812@gmail.com")
+    st.write("📧 **Email:** raviodedara2818@gmail.com")
     st.write("📍 **Location:** Canada")
     st.write("[LinkedIn](https://www.linkedin.com/in/ravikumar-odedara/) | [GitHub](https://github.com/raviodedara)")
 
